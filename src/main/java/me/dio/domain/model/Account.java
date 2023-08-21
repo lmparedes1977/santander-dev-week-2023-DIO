@@ -15,9 +15,9 @@ public class Account {
     @Column(unique = true)
     private String accountNumber;
     private String branchNumber;
-    @Column(scale = 12, precision = 2)
+    @Column(precision = 12, scale = 2)
     private BigDecimal balance;
-    @Column(scale = 12, precision = 2)
+    @Column(precision = 12, scale = 2)
 
     private BigDecimal creditLimit;
 

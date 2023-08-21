@@ -12,10 +12,10 @@ public class Card {
 
     @Id
     private UUID id;
-    @Column(scale = 12, precision = 2, unique = true)
+    @Column(precision = 12, scale = 2, unique = true)
 
     private String cardNumber;
-    @Column(scale = 12, precision = 2)
+    @Column(precision = 12, scale = 2)
 
     private BigDecimal creditLimit;
 
