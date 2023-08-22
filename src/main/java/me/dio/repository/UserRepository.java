@@ -1,4 +1,4 @@
-package me.dio.domain.repository;
+package me.dio.repository;
 
 import me.dio.domain.model.User;
 import org.springframework.data.jpa.repository.JpaRepository;
@@ -8,4 +8,8 @@ import java.util.UUID;
 
 @Repository
 public interface UserRepository extends JpaRepository<User, UUID> {
+
+    Boolean existsByAccountAccountNumber(String accountNumber);
+
+
 }

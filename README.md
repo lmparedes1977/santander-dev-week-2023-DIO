@@ -6,7 +6,7 @@ Java RESTFull API.
 
 ```mermaid
 classDiagram
-class Name {
+class User {
 - name: String
 - account: Account
 - features: Feature[]
@@ -15,10 +15,15 @@ class Name {
 }
 
     class Account {
-        - number: String
-        - branch: String
+        - accountNumber: String
+        - branchNumber: String
         - balance: Number
-        - credit: Number
+        - creditLimit: Number
+    }
+
+    class Card {
+        - cardNumber: String
+        - creditLimit: Number
     }
 
     class Feature {
@@ -26,18 +31,13 @@ class Name {
         - description: String
     }
 
-    class Card {
-        - number: String
-        - credit: Number
-    }
-
     class Tip {
         - icon: String
         - description: String
     }
 
-    Name "1" --> "1" Account : has
-    Name "1" --> "1" Card : has
-    Name "1" --> "*" Feature : has
-    Name "1" --> "*" Tip : has
+    User "1" --> "1" Account : has
+    User "1" --> "1" Card : has
+    User "1" --> "*" Feature : has
+    User "1" --> "*" Tip : has
 ```

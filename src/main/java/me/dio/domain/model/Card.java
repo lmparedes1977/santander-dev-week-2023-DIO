@@ -1,17 +1,15 @@
 package me.dio.domain.model;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 
 import java.math.BigDecimal;
-import java.util.UUID;
 
 @Entity(name = "tb_card")
 public class Card {
 
     @Id
-    private UUID id;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
     @Column(precision = 12, scale = 2, unique = true)
 
     private String cardNumber;
@@ -19,11 +17,11 @@ public class Card {
 
     private BigDecimal creditLimit;
 
-    public UUID getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(UUID id) {
+    public void setId(Long id) {
         this.id = id;
     }
 

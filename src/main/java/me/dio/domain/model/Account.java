@@ -1,31 +1,28 @@
 package me.dio.domain.model;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 
 import java.math.BigDecimal;
-import java.util.UUID;
 
 @Entity(name = "tb_account")
 public class Account {
 
     @Id
-    private UUID id;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
     @Column(unique = true)
     private String accountNumber;
     private String branchNumber;
     @Column(precision = 12, scale = 2)
     private BigDecimal balance;
     @Column(precision = 12, scale = 2)
-
     private BigDecimal creditLimit;
 
-    public UUID getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(UUID id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
