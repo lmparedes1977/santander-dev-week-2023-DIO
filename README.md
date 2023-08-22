@@ -36,8 +36,8 @@ class User {
         - description: String
     }
 
-    User "1" --> "1" Account : has
-    User "1" --> "1" Card : has
-    User "1" --> "*" Feature : has
-    User "1" --> "*" Tip : has
+    User "1" <-- "1" Account : has
+    User "1" <-- "1" Card : has
+    User "1" <-- "*" Feature : has
+    User "1" <-- "*" Tip : has
 ```
